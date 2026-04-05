@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ElektroBaas | Elektricien Utrecht</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ── NAVBAR ── -->
+  <nav class="navbar">
+    <div class="container nav-inner">
+      <a href="#" class="logo">
+        <svg width="30" height="46" viewBox="0 0 100 155" xmlns="http://www.w3.org/2000/svg">
+          <path d="M50,6 C90,6 94,38 94,56 Q94,80 70,91 L67,100 L33,100 L30,91 Q6,80 6,56 C6,38 10,6 50,6 Z" fill="#09182e" stroke="#16a34a" stroke-width="2.8" stroke-linejoin="round"/>
+          <text x="50" y="52" text-anchor="middle" font-family="Segoe UI,sans-serif" font-weight="900" font-size="13" fill="white" letter-spacing="1.5">ELEKTRO</text>
+          <line x1="22" y1="60" x2="78" y2="60" stroke="#16a34a" stroke-width="2" stroke-linecap="round"/>
+          <text x="50" y="78" text-anchor="middle" font-family="Segoe UI,sans-serif" font-weight="900" font-size="17" fill="#16a34a" letter-spacing="3">BAAS</text>
+          <rect x="33" y="100" width="34" height="7" rx="0" fill="#09182e" stroke="#16a34a" stroke-width="2.2"/>
+          <rect x="31" y="107" width="38" height="33" rx="1" fill="#09182e" stroke="#16a34a" stroke-width="2.2"/>
+          <path d="M31,113 Q50,116 69,113" fill="none" stroke="#16a34a" stroke-width="1.6" stroke-linecap="round"/>
+          <path d="M31,119 Q50,122 69,119" fill="none" stroke="#16a34a" stroke-width="1.6" stroke-linecap="round"/>
+          <path d="M31,125 Q50,128 69,125" fill="none" stroke="#16a34a" stroke-width="1.6" stroke-linecap="round"/>
+          <path d="M31,131 Q50,134 69,131" fill="none" stroke="#16a34a" stroke-width="1.6" stroke-linecap="round"/>
+          <rect x="31" y="140" width="38" height="4" rx="1" fill="#16a34a" opacity="0.5"/>
+          <rect x="36" y="144" width="28" height="8" rx="3" fill="#16a34a"/>
+        </svg>
+        Elektro<strong>Baas</strong>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#diensten">Diensten</a></li>
+        <li><a href="#projecten">Projecten</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobile-menu">
+      <a href="#diensten">Diensten</a>
+      <a href="#projecten">Projecten</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <!-- ── HERO ── -->
+  <section class="hero">
+    <div class="container hero-content">
+      <span class="badge">⚡ Erkend Elektricien · Regio Utrecht</span>
+      <h1>Vakkundige Elektricien<br>voor elk <span class="accent">Karwei</span></h1>
+      <p>Van buitenverlichting tot inbouwspots en stopcontacten —<br>kleine klussen, grote vakkennis.</p>
+      <div class="hero-btns">
+        <a href="#contact" class="btn-primary">Offerte aanvragen →</a>
+        <a href="#projecten" class="btn-outline">Bekijk projecten</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── DIENSTEN ── -->
+  <section id="diensten" class="section diensten-section">
+    <div class="container">
+      <span class="section-label">Wat ik doe</span>
+      <h2>Mijn diensten</h2>
+      <div class="diensten-grid">
+
+        <div class="dienst-card">
+          <div class="dienst-icon">💡</div>
+          <h3>Buitenverlichting</h3>
+          <p>Spots en gevellampen voor buiten — strak gemonteerd en duurzaam aangesloten.</p>
+        </div>
+
+        <div class="dienst-card">
+          <div class="dienst-icon">🔌</div>
+          <h3>Stopcontacten</h3>
+          <p>Nieuwe stopcontacten plaatsen of verplaatsen, veilig en netjes weggewerkt.</p>
+        </div>
+
+        <div class="dienst-card">
+          <div class="dienst-icon">📹</div>
+          <h3>Beveiligingscamera's</h3>
+          <p>Camera's ophangen en aansluiten zodat je thuis of via je telefoon alles in de gaten kunt houden.</p>
+        </div>
+
+        <div class="dienst-card">
+          <div class="dienst-icon">✨</div>
+          <h3>Spots & Inbouwverlichting</h3>
+          <p>Inbouwspots frezen en plaatsen voor een strakke, moderne uitstraling in huis.</p>
+        </div>
+
+        <div class="dienst-card">
+          <div class="dienst-icon">🪜</div>
+          <h3>Trapverlichting</h3>
+          <p>LED-verlichting onder elke trede voor een veilige en sfeervolle trap, dag én nacht.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PROJECTEN ── -->
+  <section id="projecten" class="section projecten-section">
+    <div class="container">
+      <span class="section-label">Eerder werk</span>
+      <h2>Recente projecten</h2>
+      <p class="section-sub">Een greep uit de klussen die ik heb uitgevoerd — elk project netjes en vakkundig afgewerkt.</p>
+
+      <!-- Project 1: Before/After Slider -->
+      <div class="project-card">
+        <div class="ba-slider" id="slider1">
+          <div class="ba-after">
+            <img src="images/trap-na.jpeg" alt="Trapverlichting na" />
+            <span class="ba-label ba-label-right">Na</span>
+          </div>
+          <div class="ba-before">
+            <img src="images/trap-voor.jpeg" alt="Trapverlichting voor" />
+            <span class="ba-label ba-label-left">Voor</span>
+          </div>
+          <div class="ba-handle" id="handle1">
+            <div class="ba-line"></div>
+            <div class="ba-btn">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none">
+                <path d="M15 18l-6-6 6-6" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M9 6l6 6-6 6" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="project-info">
+          <span class="project-tag">Trapverlichting</span>
+          <h3>LED Trapverlichting</h3>
+          <p>De klant wilde de trap een moderne, sfeervolle uitstraling geven. Ik heb LED-strips onder elke trede gemonteerd, de draden gesoldeerd en alles netjes weggewerkt. Sleep de schuifregelaar om het verschil te zien!</p>
+          <div class="review">
+            <div class="stars">★★★★★</div>
+            <blockquote>"Onze trap is echt getransformeerd! Elke trede heeft nu een warme gloed en er is geen kabel te zien. Wouter heeft alles super netjes aangelegd — absoluut een aanrader!"</blockquote>
+            <cite>— Familie Janssen, Utrecht</cite>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 2: Buitenverlichting -->
+      <div class="project-card project-card-reverse">
+        <div class="project-img">
+          <img src="images/buiten.jpeg" alt="Buitenverlichting" />
+        </div>
+        <div class="project-info">
+          <span class="project-tag">Buitenverlichting</span>
+          <h3>8 Gevelspots geïnstalleerd</h3>
+          <p>De klant had slechts één buitenlamp die weinig uitstraling had. Ik heb de oude lamp verwijderd en 8 spots strak langs de gevel gemonteerd. De kabels zijn boven de gevelpanelen door de muur gevist zodat er buiten niets zichtbaar is.</p>
+          <div class="review">
+            <div class="stars">★★★★★</div>
+            <blockquote>"Van één saaie lamp naar acht mooie spots — het verschil is ongelooflijk. 's Avonds ziet de gevel er prachtig uit en er hangt geen kabel te zien. Vakwerk!"</blockquote>
+            <cite>— Sandra K., Utrecht</cite>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 3: Binnenverlichting -->
+      <div class="project-card">
+        <div class="project-img">
+          <img src="images/binnen.jpeg" alt="Binnenverlichting TV-nis" />
+        </div>
+        <div class="project-info">
+          <span class="project-tag">Spots & Stopcontact</span>
+          <h3>TV-nis met wandspots</h3>
+          <p>Van een kale gipsmuur naar een strak tv-geheel. Ik heb twee wandspots gevreesd en ingebouwd aan weerszijden van de tv-nis, en een stopcontact verborgen in het meubel. Geen zichtbare kabels meer — alles netjes weggewerkt.</p>
+          <div class="review">
+            <div class="stars">★★★★☆</div>
+            <blockquote>"Wouter heeft onze woonkamer echt compleet gemaakt. De spots geven precies de juiste sfeer en het stopcontact in het meubel was precies wat we wilden. Geen kabel meer te zien!"</blockquote>
+            <cite>— Mark & Lisa, Utrecht</cite>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── CONTACT ── -->
+  <section id="contact" class="section contact-section">
+    <div class="container">
+      <span class="section-label">Vrijblijvend contact</span>
+      <h2>Neem contact op</h2>
+      <div class="contact-grid">
+
+        <div class="contact-info">
+          <p>Heb je een klus waarvoor je een elektricien nodig hebt? Stuur een berichtje en ik kom graag langs voor vrijblijvend advies.</p>
+          <div class="contact-items">
+            <div class="contact-item">
+              <span class="ci-icon">📞</span>
+              <div>
+                <strong>Telefoon</strong>
+                <a href="tel:0614787883">06 14 78 78 83</a>
+              </div>
+            </div>
+            <div class="contact-item">
+              <span class="ci-icon">✉️</span>
+              <div>
+                <strong>E-mail</strong>
+                <a href="mailto:Wouter.Bleijenberg@gmail.com">Wouter.Bleijenberg@gmail.com</a>
+              </div>
+            </div>
+            <div class="contact-item">
+              <span class="ci-icon">📍</span>
+              <div>
+                <strong>Werkgebied</strong>
+                <span>Regio Utrecht</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <form class="contact-form" action="https://formspree.io/f/JOUW_FORM_ID" method="POST">
+          <div class="form-row">
+            <div class="form-group">
+              <label>Voornaam</label>
+              <input type="text" name="voornaam" placeholder="Jan" required />
+            </div>
+            <div class="form-group">
+              <label>Achternaam</label>
+              <input type="text" name="achternaam" placeholder="de Vries" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label>E-mailadres</label>
+            <input type="email" name="email" placeholder="jan@email.nl" required />
+          </div>
+          <div class="form-group">
+            <label>Telefoonnummer</label>
+            <input type="tel" name="telefoon" placeholder="06 12 34 56 78" />
+          </div>
+          <div class="form-group">
+            <label>Wat kan ik voor je doen?</label>
+            <textarea name="bericht" rows="4" placeholder="Vertel kort wat je nodig hebt..." required></textarea>
+          </div>
+          <button type="submit" class="btn-primary btn-full">Verstuur bericht →</button>
+        </form>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <a href="#" class="logo">
+        <svg width="24" height="38" viewBox="0 0 100 155" xmlns="http://www.w3.org/2000/svg">
+          <path d="M50,6 C90,6 94,38 94,56 Q94,80 70,91 L67,100 L33,100 L30,91 Q6,80 6,56 C6,38 10,6 50,6 Z" fill="#09182e" stroke="#16a34a" stroke-width="2.8" stroke-linejoin="round"/>
+          <text x="50" y="52" text-anchor="middle" font-family="Segoe UI,sans-serif" font-weight="900" font-size="13" fill="white" letter-spacing="1.5">ELEKTRO</text>
+          <line x1="22" y1="60" x2="78" y2="60" stroke="#16a34a" stroke-width="2" stroke-linecap="round"/>
+          <text x="50" y="78" text-anchor="middle" font-family="Segoe UI,sans-serif" font-weight="900" font-size="17" fill="#16a34a" letter-spacing="3">BAAS</text>
+          <rect x="33" y="100" width="34" height="7" rx="0" fill="#09182e" stroke="#16a34a" stroke-width="2.2"/>
+          <rect x="31" y="107" width="38" height="33" rx="1" fill="#09182e" stroke="#16a34a" stroke-width="2.2"/>
+          <path d="M31,113 Q50,116 69,113" fill="none" stroke="#16a34a" stroke-width="1.6" stroke-linecap="round"/>
+          <path d="M31,119 Q50,122 69,119" fill="none" stroke="#16a34a" stroke-width="1.6" stroke-linecap="round"/>
+          <path d="M31,125 Q50,128 69,125" fill="none" stroke="#16a34a" stroke-width="1.6" stroke-linecap="round"/>
+          <path d="M31,131 Q50,134 69,131" fill="none" stroke="#16a34a" stroke-width="1.6" stroke-linecap="round"/>
+          <rect x="31" y="140" width="38" height="4" rx="1" fill="#16a34a" opacity="0.5"/>
+          <rect x="36" y="144" width="28" height="8" rx="3" fill="#16a34a"/>
+        </svg>
+        Elektro<strong>Baas</strong>
+      </a>
+      <p>© 2026 ElektroBaas · Wouter Bleijenberg · Regio Utrecht</p>
+      <p><a href="tel:0614787883">06 14 78 78 83</a> · <a href="mailto:Wouter.Bleijenberg@gmail.com">Wouter.Bleijenberg@gmail.com</a></p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

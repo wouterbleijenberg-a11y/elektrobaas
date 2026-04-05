@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Before & After Demo – ElektroBaas</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: #0a1628;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      font-family: 'Segoe UI', sans-serif;
+      color: white;
+      overflow: hidden;
+    }
+
+    /* Warm glow effect */
+    body::before {
+      content: '';
+      position: fixed;
+      top: -150px;
+      right: -150px;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(255, 200, 100, 0.18) 0%, rgba(255, 160, 50, 0.08) 45%, transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    h2 {
+      font-size: 1.1rem;
+      letter-spacing: 3px;
+      color: #ffc04d;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+      position: relative;
+      z-index: 1;
+    }
+
+    h1 {
+      font-size: 2rem;
+      font-weight: 800;
+      margin-bottom: 30px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .slider-wrapper {
+      position: relative;
+      width: 700px;
+      max-width: 95vw;
+      aspect-ratio: 16/9;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 0 60px rgba(255, 180, 60, 0.15), 0 20px 60px rgba(0,0,0,0.6);
+      cursor: ew-resize;
+      user-select: none;
+      z-index: 1;
+    }
+
+    /* AFTER image (bottom layer, full width) */
+    .after {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* BEFORE image (top layer, clipped) */
+    .before {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      clip-path: inset(0 50% 0 0);
+      transition: clip-path 0.02s;
+    }
+
+    /* Divider line */
+    .divider {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 3px;
+      height: 100%;
+      background: white;
+      z-index: 10;
+      pointer-events: none;
+      box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    }
+
+    /* Divider handle */
+    .handle {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 48px;
+      height: 48px;
+      background: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+      z-index: 11;
+      pointer-events: none;
+    }
+
+    .handle svg {
+      width: 22px;
+      height: 22px;
+      fill: #0a1628;
+    }
+
+    /* Labels */
+    .label {
+      position: absolute;
+      top: 16px;
+      padding: 6px 14px;
+      border-radius: 30px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      z-index: 5;
+      pointer-events: none;
+    }
+
+    .label-before {
+      left: 16px;
+      background: rgba(0,0,0,0.6);
+      color: white;
+      border: 1px solid rgba(255,255,255,0.3);
+    }
+
+    .label-after {
+      right: 16px;
+      background: rgba(255, 192, 77, 0.9);
+      color: #0a1628;
+    }
+
+    /* Placeholder styling when no real images */
+    .placeholder {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      font-weight: 600;
+      letter-spacing: 2px;
+    }
+
+    .placeholder-before {
+      background: linear-gradient(135deg, #1a2535 0%, #2a3545 100%);
+      color: rgba(255,255,255,0.3);
+    }
+
+    .placeholder-after {
+      background: linear-gradient(135deg, #0d1f3c 0%, #1a3060 100%);
+      color: rgba(255,192,77,0.5);
+    }
+
+    p.hint {
+      margin-top: 20px;
+      color: rgba(255,255,255,0.4);
+      font-size: 0.85rem;
+      letter-spacing: 1px;
+      position: relative;
+      z-index: 1;
+    }
+
+    p.hint span {
+      color: #ffc04d;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>⚡ Eerder werk</h2>
+  <h1>Voor & Na</h1>
+
+  <div class="slider-wrapper" id="slider">
+
+    <!-- AFTER (achtergrond) -->
+    <div class="placeholder placeholder-after" id="afterLayer">
+      ✨ NA
+    </div>
+
+    <!-- BEFORE (voorgrond, geclipped) -->
+    <div class="placeholder placeholder-before" id="beforeLayer">
+      🔧 VOOR
+    </div>
+
+    <!-- Labels -->
+    <div class="label label-before">Voor</div>
+    <div class="label label-after">Na</div>
+
+    <!-- Divider -->
+    <div class="divider" id="divider">
+      <div class="handle">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M8 5l-5 7 5 7M16 5l5 7-5 7"/>
+        </svg>
+      </div>
+    </div>
+
+  </div>
+
+  <p class="hint">← Sleep de lijn om <span>voor & na</span> te vergelijken →</p>
+
+  <script>
+    const slider = document.getElementById('slider');
+    const beforeLayer = document.getElementById('beforeLayer');
+    const divider = document.getElementById('divider');
+    let isDragging = false;
+
+    function setPosition(x) {
+      const rect = slider.getBoundingClientRect();
+      let pct = (x - rect.left) / rect.width;
+      pct = Math.min(Math.max(pct, 0.02), 0.98);
+      const pctRight = (1 - pct) * 100;
+      beforeLayer.style.clipPath = `inset(0 ${pctRight}% 0 0)`;
+      divider.style.left = (pct * 100) + '%';
+    }
+
+    // Mouse
+    slider.addEventListener('mousedown', e => { isDragging = true; setPosition(e.clientX); });
+    window.addEventListener('mousemove', e => { if (isDragging) setPosition(e.clientX); });
+    window.addEventListener('mouseup', () => isDragging = false);
+
+    // Touch
+    slider.addEventListener('touchstart', e => { isDragging = true; setPosition(e.touches[0].clientX); });
+    window.addEventListener('touchmove', e => { if (isDragging) setPosition(e.touches[0].clientX); });
+    window.addEventListener('touchend', () => isDragging = false);
+  </script>
+
+</body>
+</html>
