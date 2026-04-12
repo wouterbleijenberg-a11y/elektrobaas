@@ -1,17 +1,13 @@
-<svg width="200" height="300" viewBox="0 0 100 155" xmlns="http://www.w3.org/2000/svg">
-  <!-- Lamp bol -->
-  <path d="M50,6 C90,6 94,38 94,56 Q94,80 70,91 L67,100 L33,100 L30,91 Q6,80 6,56 C6,38 10,6 50,6 Z" fill="#09182e" stroke="#16a34a" stroke-width="2.8" stroke-linejoin="round"/>
-  <!-- ELEKTRO tekst -->
-  <text x="50" y="52" text-anchor="middle" font-family="Segoe UI,sans-serif" font-weight="900" font-size="13" fill="white" letter-spacing="1.5">ELEKTRO</text>
-  <!-- Scheidingslijn -->
-  <line x1="22" y1="60" x2="78" y2="60" stroke="#16a34a" stroke-width="2" stroke-linecap="round"/>
-  <!-- BAAS tekst -->
-  <text x="50" y="78" text-anchor="middle" font-family="Segoe UI,sans-serif" font-weight="900" font-size="17" fill="#16a34a" letter-spacing="3">BAAS</text>
-  <!-- Schroefdraad -->
-  <rect x="33" y="100" width="34" height="5" rx="1" fill="none" stroke="#16a34a" stroke-width="2"/>
-  <rect x="33" y="108" width="34" height="5" rx="1" fill="none" stroke="#16a34a" stroke-width="2"/>
-  <rect x="33" y="116" width="34" height="5" rx="1" fill="none" stroke="#16a34a" stroke-width="2"/>
-  <!-- Voet -->
-  <rect x="36" y="124" width="28" height="8" rx="2" fill="none" stroke="#16a34a" stroke-width="2"/>
-  <rect x="39" y="132" width="22" height="6" rx="1" fill="#16a34a"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 140">
+  <!-- Chimney -->
+  <rect x="82" y="14" width="13" height="30" fill="#16a34a"/>
+  <!-- Full house base (lighter green) -->
+  <polygon points="60,4 112,50 8,50" fill="#16a34a"/>
+  <rect x="16" y="48" width="88" height="62" fill="#16a34a"/>
+  <!-- Dark left portion with lightning bolt boundary -->
+  <polygon fill="#14532d" points="16,110 16,48 8,50 60,4 68,12 53,52 67,52 52,110"/>
+  <!-- ElektroBaas text -->
+  <text x="60" y="132" text-anchor="middle" font-family="'Segoe UI',Helvetica,Arial,sans-serif" font-size="18" letter-spacing="-0.3">
+    <tspan fill="#16a34a" font-weight="400">Elektro</tspan><tspan fill="#14532d" font-weight="700">Baas</tspan>
+  </text>
 </svg>
