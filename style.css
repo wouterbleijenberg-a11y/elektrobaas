@@ -123,9 +123,36 @@ body::before {
   align-items: center;
   padding: 110px 0 70px;
   position: relative;
+  overflow: hidden;
   z-index: 1;
 }
-.hero-content { max-width: 660px; }
+
+.hero-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  align-items: center;
+  width: 100%;
+}
+
+.hero-text {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.hero-video-wrap {
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+}
+
+.hero-video-wrap video {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  max-height: 520px;
+}
 
 .badge {
   display: inline-block;
@@ -146,15 +173,26 @@ body::before {
   line-height: 1.12;
   letter-spacing: -1px;
   margin-bottom: 20px;
-  color: var(--white);
+  color: #ffffff;
 }
 .accent { color: var(--accent); }
 
 .hero p {
   font-size: 1.08rem;
-  color: var(--white70);
+  color: rgba(255,255,255,0.85);
   margin-bottom: 38px;
   line-height: 1.75;
+}
+
+.hero .badge {
+  background: rgba(255,255,255,0.12);
+  color: #ffffff;
+  border: 1px solid rgba(255,255,255,0.30);
+}
+
+.hero .btn-outline {
+  color: #ffffff;
+  border-color: rgba(255,255,255,0.4);
 }
 
 .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
