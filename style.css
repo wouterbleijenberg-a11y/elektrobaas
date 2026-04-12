@@ -81,7 +81,7 @@ body::before {
   list-style: none;
 }
 .nav-links a {
-  color: var(--white70);
+  color: #14532d;
   text-decoration: none;
   font-size: 0.93rem;
   transition: color 0.2s;
