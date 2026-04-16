@@ -52,7 +52,7 @@ body::before {
   top: 0;
   width: 100%;
   z-index: 200;
-  background: rgba(241, 244, 241, 0.95);
+  background: rgba(26, 46, 26, 0.97);
   backdrop-filter: blur(14px);
   border-bottom: 1px solid rgba(255,255,255,0.10);
 }
@@ -81,7 +81,7 @@ body::before {
   list-style: none;
 }
 .nav-links a {
-  color: #14532d;
+  color: #ffffff;
   text-decoration: none;
   font-size: 0.93rem;
   transition: color 0.2s;
