@@ -34,3 +34,43 @@ function initSlider(slider) {
 }
 
 document.querySelectorAll('.ba-slider').forEach(initSlider);
+
+// ── BEDANKT POPUP ──
+const form = document.querySelector('.contact-form');
+
+if (form) {
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const data = new FormData(form);
+
+    try {
+      const res = await fetch(form.action, {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (res.ok) {
+        form.reset();
+        toonBedanktPopup();
+      }
+    } catch (err) {
+      toonBedanktPopup();
+    }
+  });
+}
+
+function toonBedanktPopup() {
+  const popup = document.createElement('div');
+  popup.style.cssText = 'position:fixed;inset:0;background:rgba(0,0,0,0.65);display:flex;align-items:center;justify-content:center;z-index:9999;backdrop-filter:blur(5px);';
+  popup.innerHTML = `
+    <div class="bedankt-popup">
+      <img src="images/logo.png" alt="ElektroBaas" style="height:70px;margin-bottom:16px;border-radius:8px;">
+      <div style="font-size:2.8rem;margin-bottom:12px;">✅</div>
+      <h2>Bedankt voor je bericht!</h2>
+      <p>Ik neem zo snel mogelijk contact met je op.<br>Meestal reageer ik binnen 1 werkdag.</p>
+      <button onclick="this.closest('.bedankt-popup').parentElement.remove()">Sluiten</button>
+    </div>
+  `;
+  document.body.appendChild(popup);
+}
